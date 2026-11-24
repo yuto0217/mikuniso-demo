@@ -12,31 +12,49 @@
 import type { InnConfig } from './content/schema'
 
 export const inn: InnConfig = {
-  slug: 'inn',
+  slug: 'mikuniso',
   kind: '民宿',
-  name: '宿名',
-  area: '地域名',
-  description: '地域名の民宿「宿名」。',
+  name: '苗場三国荘',
+  area: '苗場',
+  description: '苗場の民宿「苗場三国荘」。',
   intro: null,
-  theme: 'mori',
+  catchcopy: null,
+  theme: 'sora',
   tabs: [
     { to: '/rooms', label: '客室' },
     { to: '/cuisine', label: 'お料理' },
     { to: '/access', label: 'アクセス' },
   ],
-  logoChar: '宿',
-  phone: null,
+  logoChar: '三',
+  phone: '025-789-2638',
   phoneButton: true,
   hero: [
-    { label: '宿の周りの景色の写真', alt: '宿の周りの景色', tone: 'sky' },
-    { label: '夕食の写真', alt: '夕食', tone: 'kaki' },
-    { label: '宿の外観の写真', alt: '宿の外観', tone: 'wood' },
+    { label: '雪の苗場スキー場のゲレンデの写真', alt: '宿の近くの苗場スキー場のゲレンデ', tone: 'sky' },
+    { label: 'ゲレンデが見える食堂の写真', alt: '苗場のゲレンデが見える食堂', tone: 'wood' },
+    { label: '宿の外観の写真', alt: '苗場三国荘の外観', tone: 'moss' },
   ],
-  points: [],
-  pointsTitle: null,
-  access: null,
-  address: null,
+  points: [
+    {
+      text: '苗場スキー場のすぐそば',
+      description: '苗場スキー場の隣にあり、食堂からはゲレンデを眺められます。夏はフジロックでもご利用いただいています。',
+      photos: [
+        { label: 'ゲレンデの写真', alt: '苗場スキー場のゲレンデ', tone: 'sky' },
+        { label: '食堂からの眺めの写真', alt: '食堂から見えるゲレンデ', tone: 'wood' },
+      ],
+    },
+    {
+      text: 'ジェットバス付きのお風呂と貸切家族風呂',
+      description: '活性石を使ったミネラル人工温泉のジェットバスがあります。平日や空いている時間は、無料の貸切家族風呂としてお使いいただけます。',
+      photos: [
+        { label: 'ジェットバスのお風呂の写真', alt: 'ジェットバス付きのお風呂', tone: 'kaki' },
+      ],
+    },
+  ],
+  pointsTitle: '三国荘の魅力',
+  access: 'JR越後湯沢駅からバスで約45分。関越自動車道 越後湯沢ICから車で約30分',
+  address: '新潟県南魚沼郡湯沢町三国44-1',
   bookingUrl: null,
   bookingLabel: '空室を見る',
+  heroBooking: true,
   en: null,
 }

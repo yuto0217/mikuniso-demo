@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "inn-demo-template",
+	"name": "mikuniso-demo",
 	"main": "worker/index.ts",
 	"compatibility_date": "2026-11-13",
 	"assets": {
@@ -16,7 +16,9 @@
 	"observability": {
 		"enabled": true
 	},
-	"upload_source_maps": true
+	"upload_source_maps": true,
+	// プルリクエストのプレビュー（Workers Builds の wrangler preview）に必要。中身は空でよい
+	"previews": {}
 	/**
 	 * 予約フォーム実装時に追加する予定のバインディング（例）
 	 * D1:        "d1_databases": [{ "binding": "DB", "database_name": "kajika", "database_id": "..." }]

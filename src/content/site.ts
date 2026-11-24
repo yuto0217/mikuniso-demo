@@ -24,10 +24,12 @@ function buildSite(lang: Lang) {
     area: en?.area ?? inn.area,
     description: en?.description ?? inn.description,
     intro: en ? en.intro : inn.intro,
+    catchcopy: en ? en.catchcopy : inn.catchcopy,
     phone: inn.phone,
     phoneHref: inn.phone ? `tel:${inn.phone.replace(/[^\d+]/g, '')}` : '',
     /** 「電話で予約」のボタンを出すか（電話番号があり、phoneButton が true のとき） */
     showPhoneButton: Boolean(inn.phone) && inn.phoneButton,
+    showHeroBooking: inn.heroBooking ?? true,
     points,
     pointsTitle: en ? en.pointsTitle : inn.pointsTitle,
     access: en ? en.access : inn.access,
@@ -40,7 +42,12 @@ function buildSite(lang: Lang) {
     bookingIsExternal: Boolean(inn.bookingUrl && /^https?:/.test(inn.bookingUrl)),
     copyright: `© ${name}`,
     /** タブ（メニュー）。営業用の見本では中身を作らず、開くと「見本サイトのため表示されません。」を出す */
-    navItems: inn.tabs.map((tab): NavItem => ({ to: tab.to, label: en?.tabs[tab.to] ?? tab.label })),
+    navItems: inn.tabs.map((tab): NavItem => ({
+      to: tab.to,
+      label: en?.tabs[tab.to] ?? tab.label,
+      /** フルスクリーンのメニューに添える英語（inn.en があるときだけ。言語が ja でも常に en.tabs の訳を使う） */
+      labelEn: inn.en?.tabs[tab.to],
+    })),
     heroImages: inn.hero.slice(0, 3).map((image, i): SiteImage => ({ ...image, ...en?.hero[i] })),
   }
 }

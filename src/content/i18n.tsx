@@ -76,6 +76,7 @@ const ui = {
     photosOf: (label: string) => `${label}の写真`,
     mapTitle: (name: string) => `${name}の地図（Google マップ）`,
     language: '言語',
+    scroll: 'SCROLL',
   },
   en: {
     skip: 'Skip to main content',
@@ -98,6 +99,7 @@ const ui = {
     photosOf: (label: string) => `Photos: ${label}`,
     mapTitle: (name: string) => `Map of ${name} (Google Maps)`,
     language: 'Language',
+    scroll: 'SCROLL',
   },
 } as const
 

@@ -13,7 +13,7 @@ export function TabPage({ to }: { to: string }) {
     <>
       <PageMeta title={title} />
       <Section tone="paper" className="!py-24">
-        <h1 className="text-[1.75rem] font-bold text-mori-dark sm:text-4xl">{title}</h1>
+        <h1 className="text-[1.75rem] font-medium text-mori-dark sm:text-4xl">{title}</h1>
         <p className="mt-6 text-lg">{ui.demoPage}</p>
         <ButtonLink to="/" variant="secondary" icon="home" className="mt-8">
           {ui.home}

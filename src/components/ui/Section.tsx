@@ -32,13 +32,25 @@ interface SectionHeadingProps {
   title: ReactNode
   id?: string
   align?: 'left' | 'center'
+  /** 見出しの上に添える英語（例：Features・Access）。azami-demo のエディトリアルな見出しにならう。省略すると添え字なし */
+  eyebrow?: string
 }
 
-export function SectionHeading({ title, id, align = 'left' }: SectionHeadingProps) {
+/** 見出し（中央ぞろえのときは英語の添え字の左右に同じ長さの線を引く） */
+export function SectionHeading({ title, id, align = 'left', eyebrow }: SectionHeadingProps) {
+  const center = align === 'center'
   return (
-    <div className={`mb-8 flex flex-col gap-3 ${align === 'center' ? 'items-center text-center' : ''}`}>
-      <span aria-hidden="true" className="block h-1 w-10 rounded-full bg-kaki" />
-      <h2 id={id} className="text-[1.5rem] font-bold text-mori-dark sm:text-3xl">
+    <div className={`mb-8 flex flex-col gap-3 ${center ? 'items-center text-center' : ''}`}>
+      {eyebrow ? (
+        <p lang="en" aria-hidden="true" className="flex items-center gap-4 font-display text-base tracking-[0.35em] text-kaki-dark uppercase sm:text-lg">
+          <span className="h-px w-10 bg-kaki" />
+          <span className={center ? '-mr-[0.35em]' : ''}>{eyebrow}</span>
+          {center && <span className="h-px w-10 bg-kaki" />}
+        </p>
+      ) : (
+        <span aria-hidden="true" className="block h-1 w-10 rounded-full bg-kaki" />
+      )}
+      <h2 id={id} className="text-[1.5rem] font-medium text-mori-dark sm:text-3xl">
         {title}
       </h2>
     </div>

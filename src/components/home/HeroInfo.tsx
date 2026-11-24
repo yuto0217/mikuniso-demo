@@ -18,14 +18,14 @@ export function HeroInfo() {
         <section aria-labelledby="home-points" className="bg-paper py-14 sm:py-20">
           <Container>
             {site.pointsTitle ? (
-              <SectionHeading id="home-points" title={site.pointsTitle} />
+              <SectionHeading id="home-points" title={site.pointsTitle} eyebrow="Features" align="center" />
             ) : (
               <h2 id="home-points" className="sr-only">
                 {ui.pointsFallback}
               </h2>
             )}
           </Container>
-          <ol className="grid gap-14 sm:gap-20 lg:mx-auto lg:mt-4 lg:max-w-7xl lg:px-8">
+          <ol className="mt-10 grid gap-14 sm:mt-14 sm:gap-20 lg:mx-auto lg:mt-16 lg:max-w-7xl lg:px-8">
             {site.points.map((point, i) => (
               <li
                 key={i}
@@ -33,13 +33,13 @@ export function HeroInfo() {
               >
                 <Container className="lg:px-0">
                   <div>
-                    <h3 className="flex items-baseline gap-3 text-2xl leading-snug font-bold text-mori-dark sm:gap-4 sm:text-[1.75rem]">
-                      <span className="shrink-0 text-4xl text-kaki sm:text-5xl" aria-hidden="true">
-                        {i + 1}
-                      </span>
+                    <p lang="en" aria-hidden="true" className="font-display text-3xl text-kaki-dark">
+                      {String(i + 1).padStart(2, '0')}
+                    </p>
+                    <h3 className="mt-2 text-2xl leading-snug font-medium text-mori-dark sm:text-[1.75rem]">
                       <span className={site.lang === 'ja' ? 'whitespace-nowrap max-sm:text-[min(1.25rem,5.2vw)]' : ''}>{point.text}</span>
                     </h3>
-                    {point.description && <p className="mt-4 max-w-3xl text-lg leading-loose">{point.description}</p>}
+                    {point.description && <p className="mt-4 max-w-3xl text-justify text-lg leading-loose">{point.description}</p>}
                   </div>
                 </Container>
                 <div className={`mt-8 lg:mt-0 ${i % 2 === 1 ? 'lg:order-first' : ''}`}>
@@ -53,7 +53,7 @@ export function HeroInfo() {
 
       {(site.access || site.address) && (
         <Section labelledBy="home-access" className={site.points.length > 0 ? 'pt-0 sm:pt-0' : ''}>
-          <SectionHeading id="home-access" title={ui.access} />
+          <SectionHeading id="home-access" title={ui.access} eyebrow="Access" />
           <div className="grid gap-6">
             {site.access && (
               <p className="flex items-start gap-3 text-lg leading-relaxed">

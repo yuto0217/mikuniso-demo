@@ -30,6 +30,8 @@ export interface SiteImage {
 export interface NavItem {
   to: string
   label: string
+  /** メニューの見出しに添える英語（inn.config.ts の en.tabs があるときだけ。見本の言語切り替えの訳をそのまま使う） */
+  labelEn?: string
 }
 
 export interface InnPoint {
@@ -47,6 +49,8 @@ export interface InnEnglish {
   area: string
   description: string
   intro: string | null
+  /** ヒーローの2行の短い言葉（日本語の catchcopy と同じ順）。書かない項目は日本語のまま */
+  catchcopy: string[] | null
   /** タブの名前（キーはタブのパス） */
   tabs: Record<string, string>
   /** ヒーローの写真の枠（日本語の hero と同じ順） */
@@ -70,6 +74,12 @@ export interface InnConfig {
   description: string
   /** ヒーローの宿名の下に出す紹介文（1〜2文。事実だけで、誇張はしない）。なければ null */
   intro: string | null
+  /**
+   * ヒーローの短い2行の言葉（キャッチコピー）。あれば intro の代わりにヒーローへ大きく出す（明朝体）
+   * 口コミの言葉は使わず、宿の立場で事実（土地・宿の雰囲気）から短く書く。新しい誇張表現は作らない。なければ null
+   * 例：['雲見の海と、', '漁師の宿のもてなし。']
+   */
+  catchcopy: string[] | null
   theme: ThemeName
   /** タブ（メニュー）。中身は作らず、開くと「見本サイトのため表示されません。」。ふつうは客室・お料理・アクセスの3つ */
   tabs: NavItem[]
@@ -97,6 +107,8 @@ export interface InnConfig {
   bookingUrl: string | null
   /** 予約ボタンの名前（ふつうは「空室を見る」。例：「ご予約」） */
   bookingLabel: string
+  /** ヒーローの中の予約ボタンを出すか（省略すると出す。ヘッダーとスマホの画面下のボタンはそのまま） */
+  heroBooking?: boolean
   /** 英語の表示。null なら言語の切り替えボタンを出さない */
   en: InnEnglish | null
 }

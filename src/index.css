@@ -9,6 +9,9 @@
  */
 @theme {
   --font-sans: 'Noto Sans JP', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Meiryo', sans-serif;
+  /* 見出し：日本語は明朝、英語の添え字（eyebrow）はセリフ体（azami-demo のエディトリアルな見出しにならう） */
+  --font-serif: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
 
   /* 背景（白。Yuto の指示、2026年11月21日）。cream はページ、paper はヘッダーなどの背景 */
   --color-cream: #ffffff;
@@ -115,6 +118,7 @@
   h1,
   h2,
   h3 {
+    font-family: var(--font-serif);
     line-height: 1.5;
     letter-spacing: 0.04em;
     text-wrap: balance;

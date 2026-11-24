@@ -13,7 +13,7 @@ const variantClass: Record<Variant, string> = {
 }
 
 const base =
-  'inline-flex min-h-[56px] items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-bold leading-snug no-underline transition-colors'
+  'inline-flex min-h-[56px] items-center justify-center gap-2 rounded-sm px-6 py-3 text-base font-medium tracking-wider leading-snug no-underline transition-colors'
 
 interface ButtonLinkProps {
   to: string

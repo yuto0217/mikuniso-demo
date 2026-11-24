@@ -15,7 +15,7 @@ export function Footer() {
           {site.showPhoneButton && (
           <a
             href={site.phoneHref}
-            className="mt-5 flex min-h-[48px] w-fit items-center gap-2 text-2xl font-bold tracking-wider text-paper no-underline"
+            className="mt-5 flex min-h-[48px] w-fit items-center gap-2 text-2xl font-medium tracking-wider text-paper no-underline"
           >
             <Icon name="phone" className="size-6" />
             <span className="text-base tracking-normal">{ui.reservations}</span>

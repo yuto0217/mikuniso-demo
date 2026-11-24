@@ -9,7 +9,7 @@ export function NotFoundPage() {
     <>
       <PageMeta title={ui.notFound} />
       <Section tone="paper" className="!py-24">
-        <h1 className="text-[1.75rem] font-bold text-mori-dark sm:text-4xl">{ui.notFound}</h1>
+        <h1 className="text-[1.75rem] font-medium text-mori-dark sm:text-4xl">{ui.notFound}</h1>
         <ButtonLink to="/" variant="secondary" icon="home" className="mt-8">
           {ui.home}
         </ButtonLink>
